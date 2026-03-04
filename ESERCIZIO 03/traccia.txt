@@ -1,0 +1,48 @@
+Un'azienda raccoglie richieste clienti tramite CSV (requests.csv).
+
+Obiettivi:
+
+1. Leggere il file CSV
+2. Validare i dati
+
+	Regole:
+
+	- email deve contenere "@"
+	- età deve essere >= 18
+	- nome non deve essere vuoto
+
+	Se una riga non è valida deve essere scartata.
+
+3. Sanificare i dati (rimuovere spazi superflui, capitalizzazioni errate ecc.)
+
+4. Aggiungere campo "categoria_eta":
+
+	18–25 → "Junior"
+	26–40 → "Adult"
+	40 → "Senior"
+
+5. Organizzare i dati
+
+	- lista richieste valide
+	- set servizi unici richiesti
+	- dizionario conteggio richieste per servizio
+
+6. Creare:
+
+	- Classe Richiesta
+	- Classe Validator
+	- Classe Pipeline
+
+7. Salvare output JSON
+
+File: output.json
+
+Struttura:
+
+{
+  "totale_richieste": X,
+  "servizi_unici": [...],
+  "conteggio_servizi": {...},
+  "richieste": [...]
+}
+
