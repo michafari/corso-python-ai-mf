@@ -32,6 +32,15 @@ tfidf_matrix = vectorizer.fit_transform(new_dataset["soup"])
 print(tfidf_matrix.shape)
 print(tfidf_matrix.nnz)
 
+'''
+df_tfidf = pd.DataFrame(
+    tfidf_matrix[:5].toarray(),
+    columns=vectorizer.get_feature_names_out()
+)
+
+print(df_tfidf.iloc[:, 1500:1800])
+'''
+
 nn_model = NearestNeighbors(metric='cosine', algorithm='brute')
 nn_model.fit(tfidf_matrix)
 
